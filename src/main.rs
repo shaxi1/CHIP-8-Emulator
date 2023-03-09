@@ -7,6 +7,6 @@ fn main() {
 
     let mut rom_reader = rom_reader::RomReader::new(file_path.to_string());
     rom_reader.load_rom().unwrap();
-    println!("Rom {} loaded!", file_path);
+    println!("Rom: {} loaded!\n", file_path);
 
 }

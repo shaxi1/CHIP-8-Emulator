@@ -15,7 +15,7 @@ impl RomReader {
     }
 
     pub fn load_rom(&mut self) -> io::Result<()> {
-        print!("Loading rom from: {}", self.file_path);
+        print!("Loading rom from: {}\n", self.file_path);
 
         let mut file = File::open(&self.file_path)?;
         file.read_to_end(&mut self.rom)?;
