@@ -1,7 +1,40 @@
 const WIDTH: usize = 64;
 const HEIGHT: usize = 32;
 
+pub struct Display {
+    screen: [u8; WIDTH * HEIGHT],
+}
+
 impl Display {
+    pub fn new() -> Display {
+        Display {
+            screen: [0; WIDTH * HEIGHT]
+        }
+    }
+
+    fn get_index_from_cords(usize: x, usize: y) -> u8 {
+        x + y * WIDTH
+    }
+
+    pub fn get_pixel(&mut self, usize: x, usize: y) -> u8 {
+        self.screen[self.get_index_from_cords(x, y)]
+    }
+
+    pub fn set_pixel(&mut self, usize: x, usize: y, u8: set_to) {
+        self.screen[self.get_index_from_cords(x, y)] = set_to;
+    }
+
+    pub fn clear_screen(&mut self) {
+        for i in 0..HEIGHT {
+            for j in 0..WIDTH {
+                self.set_pixel(x, y, 0);
+            }
+        }
+    }
+
+    pub fn draw(&mut self, usize: x, usize: y, sprite: &[u8]) {
+
+    }
 
 }
 
